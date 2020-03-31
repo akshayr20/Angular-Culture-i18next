@@ -1,7 +1,9 @@
-import { ITranslationService, I18NEXT_SERVICE, I18NextModule, defaultInterpolationFormat } from 'angular-i18next';
-import i18nextXHRBackend from "i18next-xhr-backend";
-import i18nextLanguageDetector from "i18next-browser-languagedetector";
+import { Title } from '@angular/platform-browser';
 import { APP_INITIALIZER, LOCALE_ID } from '@angular/core';
+import { I18NextModule, ITranslationService, I18NEXT_SERVICE, I18NextTitle, defaultInterpolationFormat } from 'angular-i18next';
+import i18nextLanguageDetector from 'i18next-browser-languagedetector';
+import i18nextXHRBackend from 'i18next-xhr-backend';
+
 
 export function appInit(i18next: ITranslationService) {
   return () =>
@@ -23,7 +25,7 @@ export function appInit(i18next: ITranslationService) {
         backend: {
           loadPath: 'assets/locales/{{lng}}.{{ns}}.json',
           // path to post missing resources
-          // addPath: 'assets/locales/{{lng}}.{{ns}}.missing.json',
+          addPath: 'assets/locales/{{lng}}.{{ns}}.missing.json',
         },
         // lang detection plugin options
         detection: {
@@ -53,6 +55,10 @@ export const I18N_PROVIDERS = [
     useFactory: appInit,
     deps: [I18NEXT_SERVICE],
     multi: true
+  },
+  {
+    provide: Title,
+    useClass: I18NextTitle
   },
   {
     provide: LOCALE_ID,

@@ -1,8 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { filter, map, mergeMap } from 'rxjs/operators';
-import { Router, NavigationEnd } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { I18NextModule, ITranslationService, I18NEXT_SERVICE, I18NextTitle } from 'angular-i18next';
+import { Component, Inject, OnInit } from '@angular/core';
+import { ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 
 @Component({
   selector: 'app-root',
@@ -11,34 +8,30 @@ import { I18NextModule, ITranslationService, I18NEXT_SERVICE, I18NextTitle } fro
 })
 
 export class AppComponent implements OnInit {
+  language = 'en';
+
   constructor(
-    private router: Router,
-    private title: Title,
-    @Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService) {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      map(() => this.router.routerState.root),
-      map(route => {
-        while (route.firstChild) { route = route.firstChild; }
-        return route;
-      }),
-      filter(route => route.outlet === 'primary'),
-      mergeMap(route => route.data)
-      ).subscribe((event) => this.updatePageTitle(event.title));
-  }
+    @Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService
+  ) {}
 
   ngOnInit() {
-    this.i18NextService.events.languageChanged.subscribe(lang => {
-      const root = this.router.routerState.root;
-      if (root != null && root.firstChild != null) {
-        const data: any = root.firstChild.data;
-        this.updatePageTitle(data && data.value && data.value.title);
+    this.i18NextService.events.initialized.subscribe((e) => {
+      if (e) {
+        this.updateState(this.i18NextService.language);
       }
     });
   }
 
-  updatePageTitle(title: string): void {
-    const newTitle = title || 'my awesome i18next page';
-    this.title.setTitle(newTitle);
+  changeLanguage(lang: string){
+    if (lang !== this.i18NextService.language) {
+      this.i18NextService.changeLanguage(lang).then(x => {
+        this.updateState(lang);
+        document.location.reload();
+      });
+    }
+  }
+
+  private updateState(lang: string) {
+    this.language = lang;
   }
 }
