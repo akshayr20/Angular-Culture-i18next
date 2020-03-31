@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/Angular-culture",
             "index": "src/index.html",
@@ -21,7 +21,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/locales"
             ],
             "styles": [
               "src/styles.css"
@@ -60,7 +61,13 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
+          "aot": false,
+          "assets": [
+            "src/favicon.ico",
+            "src/assets",
+            "src/locales"
+          ],
           "options": {
             "browserTarget": "Angular-culture:build"
           },
@@ -77,7 +84,7 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Angular-culture"
+    }
+  },
+  "defaultProject": "Angular-culture",
+  "cli": {
+    "analytics": "be1ff47b-7c43-41e9-8765-4c8aaeba30d6"
+  }
 }
