@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   language = 'en';
 
   constructor(
-    @Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService
+    @Inject(I18NEXT_SERVICE) public i18NextService: ITranslationService
   ) {}
 
   ngOnInit() {
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   changeLanguage(lang: string){
+    // if the same lang is selected, do not reset the lang 
     if (lang !== this.i18NextService.language) {
       this.i18NextService.changeLanguage(lang).then(x => {
         this.updateState(lang);

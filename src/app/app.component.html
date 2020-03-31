@@ -1,8 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <button (click)="changeLanguage('en')">English</button>
-<button (click)="changeLanguage('el')">Spanish</button>
+<button (click)="changeLanguage('ru')">Russian</button>
+<button (click)="changeLanguage('de')">German</button>
+
 
 <h1>
-  {{ 'message' | i18next }}!
+  {{ 'intro' | i18next }}!
 </h1>
+
+<h2>
+  {{ 'error:error_occured' | i18next }}
+</h2>
+
+<h2>
+  {{ 'validation:required' | i18next }}
+</h2>
+
+
+
+Translate Message: {{ i18NextService.t('intro') }}
+
 <router-outlet></router-outlet>

@@ -11,21 +11,21 @@ export function appInit(i18next: ITranslationService) {
       .use(i18nextXHRBackend)
       .use(i18nextLanguageDetector)
       .init({
-        whitelist: ['en', 'el'],
+        whitelist: ['en', 'ru', 'de'],
         fallbackLng: 'en',
         debug: true,
         returnEmptyString: false,
         saveMissing: true,
         ns: [
-          'translation'
+          'translation',
+          'error',
+          'validation'
         ],
         interpolation: {
           format: I18NextModule.interpolationFormat(defaultInterpolationFormat)
         },
         backend: {
           loadPath: 'assets/locales/{{lng}}.{{ns}}.json',
-          // path to post missing resources
-          addPath: 'assets/locales/{{lng}}.{{ns}}.missing.json',
         },
         // lang detection plugin options
         detection: {
