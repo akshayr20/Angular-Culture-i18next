@@ -1,5 +1,5 @@
 ﻿{
-    "required": "Field is required.",
+    "required": "Feld ist erforderlich.",
     "min": "Minimum value is {{min}}. Was {{actual}}.",
     "max": "Maximum value is {{max}}. Was {{actual}}."
 }

@@ -1,23 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<button (click)="changeLanguage('en')">English</button>
-<button (click)="changeLanguage('ru')">Russian</button>
-<button (click)="changeLanguage('de')">German</button>
 
+<orxe-dropdown
+  placeholder="Select Language"
+  [items]="items"
+  (onChange)="changeLanguage($event)"
+></orxe-dropdown>
 
-<h1>
-  {{ 'intro' | i18next }}!
-</h1>
+<fieldset>
+  <legend>Translation From Translation NameSpace:</legend>
+  <h4>{{ "intro" | i18next }}!</h4>
+</fieldset>
 
-<h2>
-  {{ 'error:error_occured' | i18next }}
-</h2>
+<fieldset>
+  <legend>ErrorMessage From Error Namespace:</legend>
+  <h4>{{ "error:error_occured" | i18next }}!</h4>
+</fieldset>
 
-<h2>
-  {{ 'validation:required' | i18next }}
-</h2>
+<fieldset>
+  <legend>ValidationMessage From Validation NameSpace:</legend>
+  <h4>{{ "validation:required" | i18next }}!</h4>
+</fieldset>
 
+<fieldset>
+  <legend>Translation with i18Service Doesn't Needs page refresh:</legend>
+  <h4>{{ i18NextService.t("intro") }}</h4>
+</fieldset>
 
-
-Translate Message: {{ i18NextService.t('intro') }}
-
-<router-outlet></router-outlet>
+<fieldset>
+  <legend>Base Components:</legend>
+  <div class="flex flex-justify-space-between">
+    <orxe-button type="submit" kind="primary " size="medium" value="medium">{{
+      "search_flights" | i18next
+    }}</orxe-button>
+    <orxe-counter min="0" value="1" max="10"></orxe-counter>
+  </div>
+</fieldset>

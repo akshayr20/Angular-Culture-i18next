@@ -4,11 +4,28 @@ import { ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent implements OnInit {
   language = 'en';
+  items = [
+    {
+      optionGroup: [
+        {
+          label: 'English',
+          value: 'en',
+        },
+        {
+          label: 'Russian',
+          value: 'ru',
+        },
+        {
+          label: 'German',
+          value: 'de',
+        },
+      ],
+    },
+  ];
 
   constructor(
     @Inject(I18NEXT_SERVICE) public i18NextService: ITranslationService
@@ -22,10 +39,14 @@ export class AppComponent implements OnInit {
     });
   }
 
-  changeLanguage(lang: string){
-    // if the same lang is selected, do not reset the lang 
+  changeLanguage({ detail }) {
+    if (!detail.value) {
+      return;
+    }
+    const lang = detail.value;
+    // if the same lang is selected, do not reset the lang
     if (lang !== this.i18NextService.language) {
-      this.i18NextService.changeLanguage(lang).then(x => {
+      this.i18NextService.changeLanguage(lang).then((x) => {
         this.updateState(lang);
         document.location.reload();
       });

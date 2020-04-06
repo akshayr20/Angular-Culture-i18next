@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://oski-cdn.s3.amazonaws.com/common/css/fonts/ProximaNova/proxima-nova.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+}
+
+body  {
+  font-size: 1.6rem;
+}
