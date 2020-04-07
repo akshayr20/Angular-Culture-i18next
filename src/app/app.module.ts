@@ -1,14 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { I18NextModule } from 'angular-i18next';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { I18N_PROVIDERS, setNameSpace, setResourceUrl } from 'culture-i18n';
-import { I18NextModule } from 'angular-i18next';
-
-setNameSpace(['translation', 'error', 'validation']);
-setResourceUrl('assets/locales/{{lng}}.{{ns}}.json');
+import { I18N_PROVIDERS } from './i18nextConfig';
 
 @NgModule({
   declarations: [AppComponent],
