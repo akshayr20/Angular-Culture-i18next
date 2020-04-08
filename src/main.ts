@@ -10,9 +10,11 @@ import '@bit/orxe_3.base.dropdown';
 import '@bit/orxe_3.base.counter';
 
 cultureInit({
-  debug: true,
+  debug: false,
   fallbackLng: 'en',
   ns: ['translation', 'error', 'validation'],
+  url:
+    'https://raw.githubusercontent.com/akshayr20/Angular-Culture-i18next/master/src/assets/locales/{{lng}}.{{ns}}.json'
 });
 
 if (environment.production) {
