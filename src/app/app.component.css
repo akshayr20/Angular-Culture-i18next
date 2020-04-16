@@ -11,3 +11,7 @@ h1 {
 .flex-justify-space-between {
   justify-content: space-between;
 }
+
+.mg-bottom-sm {
+  margin-bottom: 2rem;
+}

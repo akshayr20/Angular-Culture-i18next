@@ -7,6 +7,7 @@ import { ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  title = '';
   language = 'en';
   items = [
     {
