@@ -1,10 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<orxe-dropdown
-  placeholder="Select Language"
-  [items]="items"
-  (onChange)="changeLanguage($event)"
-></orxe-dropdown>
-
+<section class="mg-bottom-sm">
+  <orxe-dropdown
+    placeholder="Select Language"
+    [items]="items"
+    (onChange)="changeLanguage($event)"
+  ></orxe-dropdown>
+</section>
+<!--
 <section>
   <h2>Application One Flights</h2>
 
@@ -30,15 +32,24 @@
     <legend>Destination Label For Flight Application:</legend>
     <h4>{{ "hotel.labels.destination.label" | i18nextEager }}</h4>
   </fieldset>
-</section>
+</section> -->
 
 <!-- Extras Highlighting Angular i18Next usage  -->
+
+<section class="mg-bottom-sm">
+  <orxe-rating-bar
+    type="linear"
+    label="Experience"
+    rating="71"
+  ></orxe-rating-bar>
+  <orxe-rating-bar type="linear" label="Location" rating="50"></orxe-rating-bar>
+</section>
 
 <section>
   <h2>Angular i18Next pipe usage</h2>
   <fieldset>
     <legend>Translation:</legend>
-    <h4>{{ "intro" | i18next }}!</h4>
+    <h4>{{ "intro" | i18nextEager }}!</h4>
   </fieldset>
 
   <fieldset>

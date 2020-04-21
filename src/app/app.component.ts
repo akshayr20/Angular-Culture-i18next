@@ -29,7 +29,7 @@ async function mockBackEnd(lang) {
           break;
       }
       resolve(resources);
-    }, 2000);
+    }, 500);
   });
   return promise;
 }

@@ -15,6 +15,8 @@ export const en = {
       destination_label: 'Destination Label For Hotel'
     }
   },
+  Experience: 'Experience',
+	Location: 'Location',
   intro: 'Culture package with i18Next',
   error_occurred: 'Error has occurred',
   required: 'Field is required.',
@@ -29,6 +31,8 @@ export const de = {
     'Diese Anwendung demonstriert die Integration der i18next-Bibliothek mit Winkel.',
   error_occurred: 'Es ist ein Fehler aufgetreten',
   required: 'Feld ist erforderlich.',
+  Experience: 'Erfahrung',
+	Location: 'Ort',
 };
 
 export const ru = {
@@ -40,4 +44,6 @@ export const ru = {
     'Данное приложение демонстрирует интеграцию библиотеки i18next с angular. Вы можете сменить язык в шапке.',
   error_occurred: 'произошла ошибка',
   required: 'Заполните это поле.',
+  Experience: 'Опыт',
+	Location: 'Расположение',
 };
