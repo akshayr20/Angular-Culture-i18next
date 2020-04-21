@@ -1,5 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
 <orxe-dropdown
   placeholder="Select Language"
   [items]="items"
@@ -8,17 +7,17 @@
 
 <fieldset>
   <legend>Translation From Translation NameSpace:</legend>
-  <h4>{{ "intro" | i18next }}!</h4>
+  <h4>{{ "intro" | i18nextEager }}!</h4>
 </fieldset>
 
 <fieldset>
   <legend>ErrorMessage From Error Namespace:</legend>
-  <h4>{{ "error:error_occured" | i18next }}!</h4>
+  <h4>{{ "error_occurred" | i18nextEager }}!</h4>
 </fieldset>
 
 <fieldset>
   <legend>ValidationMessage From Validation NameSpace:</legend>
-  <h4>{{ "validation:required" | i18next }}!</h4>
+  <h4>{{ "required" | i18nextEager }}!</h4>
 </fieldset>
 
 <fieldset>

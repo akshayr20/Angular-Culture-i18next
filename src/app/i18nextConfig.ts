@@ -9,8 +9,8 @@ import {
 
 import { i18NextInit } from 'culture-i18n';
 
-function appInit() {
-  return () => i18NextInit();
+function appInit(i18next: ITranslationService) {
+  return () => i18NextInit(i18next);
 }
 
 function localeIdFactory(i18next: ITranslationService) {
