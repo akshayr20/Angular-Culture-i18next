@@ -5,32 +5,49 @@
   (onChange)="changeLanguage($event)"
 ></orxe-dropdown>
 
-<fieldset>
-  <legend>Translation From Translation NameSpace:</legend>
-  <h4>{{ "intro" | i18nextEager }}!</h4>
-</fieldset>
+<section>
+  <h2>Application One Flights</h2>
 
-<fieldset>
-  <legend>ErrorMessage From Error Namespace:</legend>
-  <h4>{{ "error_occurred" | i18nextEager }}!</h4>
-</fieldset>
+  <fieldset>
+    <legend>Search Label For Flight Application:</legend>
+    <h4>{{ "flight.labels.search_label" | i18nextEager }}</h4>
+  </fieldset>
 
-<fieldset>
-  <legend>ValidationMessage From Validation NameSpace:</legend>
-  <h4>{{ "required" | i18nextEager }}!</h4>
-</fieldset>
+  <fieldset>
+    <legend>Destination Label For Flight Application:</legend>
+    <h4>{{ "flight.labels.destination_label" | i18nextEager }}</h4>
+  </fieldset>
+</section>
 
-<fieldset>
-  <legend>Translation with i18Service Doesn't Needs page refresh:</legend>
-  <h4>{{ i18NextService.t("intro") }}</h4>
-</fieldset>
+<section>
+  <h2>Application Two Hotels</h2>
+  <fieldset>
+    <legend>Search Label For Hotel Application:</legend>
+    <h4>{{ "hotel.labels.search_label" | i18nextEager }}</h4>
+  </fieldset>
 
-<fieldset>
-  <legend>Base Components:</legend>
-  <div class="flex flex-justify-space-between">
-    <orxe-button type="submit" kind="primary " size="medium" value="medium">{{
-      "search_flights" | i18next
-    }}</orxe-button>
-    <orxe-counter min="0" value="1" max="10"></orxe-counter>
-  </div>
-</fieldset>
+  <fieldset>
+    <legend>Destination Label For Flight Application:</legend>
+    <h4>{{ "hotel.labels.destination.label" | i18nextEager }}</h4>
+  </fieldset>
+</section>
+
+<!-- Extras Highlighting Angular i18Next usage  -->
+
+<section>
+  <h2>Angular i18Next pipe usage</h2>
+  <fieldset>
+    <legend>Translation:</legend>
+    <h4>{{ "intro" | i18next }}!</h4>
+  </fieldset>
+
+  <fieldset>
+    <legend>ErrorMessage:</legend>
+    <h4>{{ "error_occurred" | i18nextEager }}!</h4>
+  </fieldset>
+
+  <fieldset>
+    <legend>ValidationMessage:</legend>
+    <h4>{{ "required" | i18nextEager }}!</h4>
+  </fieldset>
+</section>

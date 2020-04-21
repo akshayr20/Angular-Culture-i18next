@@ -1,0 +1,30 @@
+{
+  "flight": {
+    "labels": {
+      "search_label": {
+        "key": "search_label",
+        "value": "Flight Search",
+        "description": "Search Label for Flights"
+      },
+      "destination_label": {
+        "key": "destination_label",
+        "value": "Flight Destination",
+        "description": "Destination label for flights"
+      }
+    }
+  },
+  "hotel": {
+    "labels": {
+      "search_label": {
+        "key": "search_label",
+        "value": "Hotel Search",
+        "description": "Search Label for Hotel"
+      },
+      "destination_label": {
+        "key": "destination_label",
+        "value": "Hotel Destination",
+        "description": "Destination label for Hotels"
+      }
+    }
+  }
+}

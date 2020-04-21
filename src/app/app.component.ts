@@ -105,5 +105,6 @@ export class AppComponent implements OnInit {
 
   private updateState(lang: string) {
     this.language = lang;
+    this.ref.detectChanges();
   }
 }

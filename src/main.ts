@@ -7,11 +7,9 @@ import { environment } from './environments/environment';
 
 import './base-components';
 
-// cultureConfigInit({
-//   debug: true,
-//   fallbackLng: 'en',
-//   // ns: ['translation', 'error', 'validation'],
-// });
+cultureConfigInit({
+  debug: true,
+});
 
 if (environment.production) {
   enableProdMode();
