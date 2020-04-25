@@ -1,0 +1,19 @@
+{
+  "flight": {
+    "labels": {
+      "search_label": "Flugsuche",
+      "destination_label": "Flugziel"
+    }
+  },
+  "hotel": {
+    "labels": {
+      "search_label": "Hotelsuche",
+      "destination_label": "Hotel Ziel"
+    }
+  },
+  "intro": "Diese Anwendung demonstriert die Integration der i18next-Bibliothek mit Winkel.",
+  "error_occurred": "Es ist ein Fehler aufgetreten",
+  "required": "Feld ist erforderlich.",
+  "Experience": "Erfahrung",
+  "Location": "Ort"
+}

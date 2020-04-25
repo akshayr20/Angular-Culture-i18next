@@ -1,0 +1,19 @@
+{
+  "flight": {
+    "labels": {
+      "search_label": "Flight Search",
+      "destination_label": "Destination Label For Flight"
+    }
+  },
+  "hotel": {
+    "labels": {
+      "search_label": "Hotel Search",
+      "destination_label": "Destination Label For Hotel"
+    }
+  },
+  "intro": "Culture package with i18Next",
+  "error_occurred": "Error has occurred",
+  "required": "Field is required.",
+  "Experience": "Experience",
+  "Location": "Location"
+}

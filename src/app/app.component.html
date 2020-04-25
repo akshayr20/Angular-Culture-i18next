@@ -1,40 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <section class="mg-bottom-sm">
   <orxe-dropdown
     placeholder="Select Language"
-    [items]="items"
+    [items]="cr.items"
     (onChange)="changeLanguage($event)"
   ></orxe-dropdown>
 </section>
-<!--
-<section>
-  <h2>Application One Flights</h2>
-
-  <fieldset>
-    <legend>Search Label For Flight Application:</legend>
-    <h4>{{ "flight.labels.search_label" | i18nextEager }}</h4>
-  </fieldset>
-
-  <fieldset>
-    <legend>Destination Label For Flight Application:</legend>
-    <h4>{{ "flight.labels.destination_label" | i18nextEager }}</h4>
-  </fieldset>
-</section>
-
-<section>
-  <h2>Application Two Hotels</h2>
-  <fieldset>
-    <legend>Search Label For Hotel Application:</legend>
-    <h4>{{ "hotel.labels.search_label" | i18nextEager }}</h4>
-  </fieldset>
-
-  <fieldset>
-    <legend>Destination Label For Flight Application:</legend>
-    <h4>{{ "hotel.labels.destination.label" | i18nextEager }}</h4>
-  </fieldset>
-</section> -->
-
-<!-- Extras Highlighting Angular i18Next usage  -->
 
 <section class="mg-bottom-sm">
   <orxe-rating-bar
@@ -49,16 +21,16 @@
   <h2>Angular i18Next pipe usage</h2>
   <fieldset>
     <legend>Translation:</legend>
-    <h4>{{ "intro" | i18nextEager }}!</h4>
+    <h4>{{ "intro" | i18next }}!</h4>
   </fieldset>
 
   <fieldset>
     <legend>ErrorMessage:</legend>
-    <h4>{{ "error_occurred" | i18nextEager }}!</h4>
+    <h4>{{ "error_occurred" | i18next }}!</h4>
   </fieldset>
 
   <fieldset>
     <legend>ValidationMessage:</legend>
-    <h4>{{ "required" | i18nextEager }}!</h4>
+    <h4>{{ "required" | i18next }}!</h4>
   </fieldset>
 </section>

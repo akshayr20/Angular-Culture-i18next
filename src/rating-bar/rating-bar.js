@@ -24,22 +24,20 @@ var __metadata =
 			return Reflect.metadata(k, v);
 	};
 
-import { html, customElement, property, LitElement } from 'lit-element';
+import { html, customElement, property } from 'lit-element';
 import ratingBarScss from './rating-bar-css';
 import { styleMap } from 'lit-html/directives/style-map';
 import { classMap } from 'lit-html/directives/class-map';
-import { i18next } from 'culture-i18n';
+import { TranslationClass } from 'culture-i18n';
 
-let OrxeRatingBar = class OrxeRatingBar extends LitElement {
+
+let OrxeRatingBar = class OrxeRatingBar extends TranslationClass {
 	constructor() {
 		super();
 		this.type = 'linear';
 		this.rating = 0;
 		this.label = '';
 		this.actualRating = 0;
-		i18next.on('languageChanged', (res) => {
-			this.requestUpdate();
-		});
 	}
 	firstUpdated() {
 		if (!this.hasAttribute('aria-label')) {
@@ -149,7 +147,7 @@ let OrxeRatingBar = class OrxeRatingBar extends LitElement {
 					></div>
 				</div>
 				<div class="linear-track__info">
-					<span data-testid="linear-rating-label">${i18next.t(this.label)}</span>
+					<span data-testid="linear-rating-label">${this.t(this.label)}</span>
 					<span data-testid="linear-rating-value">${this.actualRating}</span>
 				</div>
 			`;

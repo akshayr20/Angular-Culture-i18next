@@ -1,0 +1,19 @@
+{
+  "flight": {
+    "labels": {
+      "search_label": "Поиск рейса",
+      "destination_label": "Направление полета"
+    }
+  },
+  "hotel": {
+    "labels": {
+      "search_label": "Поиск отеля",
+      "destination_label": "Назначение отеля"
+    }
+  },
+  "intro": "Данное приложение демонстрирует интеграцию библиотеки i18next с angular. Вы можете сменить язык в шапке.",
+  "error_occurred": "произошла ошибка",
+  "required": "Заполните это поле.",
+  "Experience": "Опыт",
+  "Location": "Расположение"
+}
